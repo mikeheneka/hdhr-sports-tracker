@@ -3,6 +3,10 @@
 > **Edge-computed, zero-latency NFL broadcast telemetry running on Apple Silicon.**  
 > Ingests uncompressed Over-The-Air (OTA) television from an HDHomeRun tuner, parses live closed captions in real time, runs optical character recognition (OCR) on the broadcast scorebug, and serves a live interactive web dashboard on `localhost`.
 
+<p align="center">
+  <img src="assets/dashboard_preview.png" alt="HDHR Live Sports Tracker Web Dashboard" width="750" />
+</p>
+
 ---
 
 ## ⚡ The Architecture
@@ -37,7 +41,12 @@ flowchart LR
 ## 🎯 Key Capabilities
 
 - **Zero-CPU Closed Caption Extraction**: Pipes MPEG-TS directly to `ccextractor` to ingest live commentary, official referee announcements, and announcer calls without touching the GPU.
-- **Scorebug OCR & Segmentation**: Isolates the broadcast scorebug and uses targeted Tesseract OCR with adaptive contrast inversion and border padding to extract:
+- **Scorebug OCR & Segmentation**: Isolates the broadcast scorebug and uses targeted Tesseract OCR with adaptive contrast inversion and border padding:
+  
+  <p align="center">
+    <img src="assets/scorebug_sample.jpg" alt="Raw ESPN Scorebug Crop" width="550" />
+  </p>
+
   - Game Clock (`MM:SS`) & Quarter
   - Play Clock (`PC: 40`, `PC: 25`, etc.)
   - Down & Distance (`1st & 10`, `3rd & Goal`, `2nd Down`)
