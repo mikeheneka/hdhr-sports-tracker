@@ -165,6 +165,26 @@ The embedded server exposes a live JSON state endpoint consumed by the web visua
 
 ---
 
+## 🗺️ Roadmap & TODO
+
+- [ ] **Multi-Network Broadcast Profiles (`--network`)**
+  - [ ] **FOX Sports** (Sunday NFC games) — calibrate scorebug coordinates & yellow down-and-distance badge
+  - [ ] **CBS Sports** (Sunday AFC games) — calibrate horizontal ribbon, clock & possession markers
+  - [ ] **NBC Sports** (*Sunday Night Football*) — calibrate NBC ribbon layout and green possession indicator
+  - [ ] **Amazon Prime Video / TNF** (local OTA affiliate simulcasts)
+- [ ] **Computer Vision Auto-Detection**
+  - [ ] Implement contour/edge detection to automatically locate the scorebug bounding box without hardcoded pixel coordinates across 720p and 1080i feeds
+- [ ] **HDHomeRun Tuner Auto-Discovery & Guide Sync**
+  - [ ] Query HDHomeRun `discover.json` and `lineup.json` to list available game channels automatically
+  - [ ] Auto-detect participating teams and team colors from closed-caption pregame introductions (no `--team1`/`--team2` flags needed)
+- [ ] **Smart Home & Webhook Triggers**
+  - [ ] Webhook event dispatching on scores (`TOUCHDOWN`, `FIELD GOAL`, `SAFETY`) and turnovers (`INTERCEPTION`, `FUMBLE`)
+  - [ ] Home Assistant / Philips Hue light flashing in team colors on scoring plays
+- [ ] **Audio Excitement Detection**
+  - [ ] Ingest broadcast AC3 audio stream to detect crowd noise volume spikes as a confidence booster for big plays
+
+---
+
 ## 📄 License
 
 MIT License. See [LICENSE](LICENSE) for details.
